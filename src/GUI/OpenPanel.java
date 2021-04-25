@@ -108,5 +108,9 @@ public class OpenPanel extends BackGroundPanel{
 		
 		CardLayout cardLayout = (CardLayout) gui.cards.getLayout();
 		cardLayout.show(gui.cards, "AIoptions");
+		
+		synchronized(MancalaGame.lock) {
+			MancalaGame.lock.notify();
+		}
 	}
 }
